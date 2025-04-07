@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h1>🌟🧘 MINDVIBE: TU ALIADO DIGITAL PARA LA SALUD EMOCIONAL 💙🤖</h1>
+    <div class="sesión">
+        <h2>Iniciar Sesión</h2>
+
+        <form action="/login" method="POST">
+            <div class="input-container">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="correo" required>
+                <label>Correo:</label>
+            </div>
+
+            <div class="input-container">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="contraseña" required>
+                <label>Contraseña:</label>
+            </div>
+
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+
+        <p>¿No tienes cuenta? <a href="{{ url_for('formulario') }}">Regístrate aquí</a></p>
+
+
+    </div>
+
+</body>
+</html>

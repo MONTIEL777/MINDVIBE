@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Emociones</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="mindvibe-title">🌟🧘 MINDVIBE: TU ALIADO DIGITAL PARA LA SALUD EMOCIONAL 💙🤖</h1>
+
+        <!-- Solo se muestra el nombre del usuario -->
+        <div id="user-info">
+            <p>Bienvenido, {{ usuario }} 👋</p>
+        </div>
+
+        <!-- Captura de imagen desde la cámara -->
+        <div class="video-container">
+            <video id="video" autoplay></video>
+            <canvas id="canvas" style="display:none;"></canvas>
+            <button id="captureBtn">📷 Tomar Foto</button>
+        </div>
+
+        <!-- Subir imagen desde la computadora -->
+        <label for="imageUpload" class="custom-file-upload">📂 Subir Imagen</label>
+        <input type="file" id="imageUpload" accept="image/*">
+        
+        <button id="sendBtn">🔍 Analizar Emoción</button>
+
+        <!-- Resultado -->
+        <div id="result-container">
+            <h2>🔎 Emoción Detectada:</h2>
+            <p id="emotionResult">Esperando...</p>
+        </div>
+
+        <!-- Chatbot Interactivo -->
+        <div id="chatbot-container">
+            <h3>💬 Chatbot:</h3>
+            <div id="chatbox">
+                <p><strong>🤖 ALEXIA:</strong> ¡Hola! ¿Cómo te sientes hoy?</p>
+            </div>
+            <input type="text" id="userInput" placeholder="Escribe tu mensaje..." />
+            <button id="sendMessageBtn">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        // Recuperar el nombre guardado en localStorage
+        const nombreUsuario = localStorage.getItem("nombreUsuario");
+    
+        // Mostrarlo en la pantalla de bienvenida
+        if (nombreUsuario) {
+            document.getElementById("nombre-usuario").textContent = nombreUsuario;
+        } else {
+            document.getElementById("nombre-usuario").textContent = "Invitado";
+        }
+    </script>
+    
+    <button onclick="regresarAlRegistro()" class="boton-regresar">🔙 Regresar</button>
+    <script>
+        function regresarAlRegistro() {
+            window.location.href = "{{ url_for('login') }}";
+        }
+    </script>
+    
+    
+
+    <script src="static/js/script.js"></script>
+</body>
+</html> 

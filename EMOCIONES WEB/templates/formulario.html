@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | MindVibe</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="fondo-blur"></div>
+    <div class="contenedor"><h1>🌟🧘 MINDVIBE: TU ALIADO DIGITAL PARA LA SALUD EMOCIONAL 💙🤖</h1>
+        
+        <div class="formulario">
+            <h2>Regístrate en nuestra plataforma</h2>
+
+            <!-- Formulario para la Base de Datos -->
+            <form id="registro-form" action="/guardar" method="POST">
+                <div class="input-container">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <label>Nombre:</label>
+                </div>
+
+                <div class="input-container">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="correo" required>
+                    <label>Correo:</label>
+                </div>
+
+                <div class="input-container">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="contraseña" required>
+                    <label>Contraseña:</label>
+                </div>
+
+                <button type="submit">Registrar</button>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("registro-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita que la página se recargue
+
+            // Captura el nombre ingresado
+            let nombreIngresado = document.getElementById("nombre").value;
+
+            // Guarda el nombre en localStorage
+            localStorage.setItem("nombreUsuario", nombreIngresado);
+
+            // Envía el formulario manualmente
+            this.submit();
+
+            // Redirige a la página principal después de un tiempo
+            setTimeout(() => {
+                window.location.href = "/detectar"; // Ajusta la ruta según corresponda
+            }, 500);
+        });
+    </script>
+
+<p>¿Ya tienes cuenta? <a href="{{ url_for('login') }}">Inicia sesión</a></p>
+
+</body>
+</html>

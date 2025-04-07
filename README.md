@@ -1,4 +1,4 @@
-# 🤖 Alexia - Detector de Emociones con Chatbot Inteligente
+# 🤖 MINDVIBE - Detector de Emociones con Chatbot Inteligente
 
 Este proyecto es una aplicación web que permite detectar emociones humanas a través de una imagen capturada desde la cámara o cargada desde el dispositivo. Una vez detectada la emoción, un chatbot llamado **Alexia** inicia una conversación amigable y empática, ofreciendo apoyo emocional según la emoción detectada.
 
